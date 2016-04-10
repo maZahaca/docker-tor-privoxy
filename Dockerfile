@@ -9,7 +9,7 @@ EXPOSE 8118
 # Add custom config
 ADD ./privoxy/config /etc/privoxy/config
 
-echo "forward-socks4a / ${TOR_PROXY}:9050 ." >> /etc/privoxy/config
+RUN echo "forward-socks4a / ${TOR_PROXY}:9050 ." >> /etc/privoxy/config
 
 CMD ["privoxy", "--no-daemon", "/etc/privoxy/config"]
 
